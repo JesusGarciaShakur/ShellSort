@@ -1,18 +1,8 @@
-## Getting Started
+ShellSort.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Es un algoritmo de ordenamiento que es una extensión de la ordenación por inserción. Fue diseñado para mejorar la complejidad temporal de la ordenación por inserción al permitir el intercambio de elementos que están distantes entre sí. La idea básica es reorganizar los elementos en posiciones distantes, reduciendo progresivamente la brecha entre los elementos a comparar e intercambiar. El algoritmo lleva el nombre de su inventor, Donald Shell.
 
-## Folder Structure
+1. El Shell sort es una generalización del ordenamiento por inserción, teniendo en cuenta dos observaciones:
 
-The workspace contains two folders by default, where:
+2. El ordenamiento por inserción es eficiente si la entrada está "casi ordenada".
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
