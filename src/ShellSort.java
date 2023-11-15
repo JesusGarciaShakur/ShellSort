@@ -24,7 +24,7 @@ public class ShellSort {
                     arreglo[j] = arreglo[j - salto];
                     j -= salto;
                 }
-                arreglo[j] = salto;
+                arreglo[j] = saltoactual;
             }
             salto /= 2;
         }
@@ -32,25 +32,28 @@ public class ShellSort {
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
         Files archivo = new Files();
         String entrada;
         int[] datos;
+
         System.out.println("-----------Shell Sort-----------");
         System.out.println("Escriba el nombre del archivo de datos");
-        entrada = bufer.readLine();
+        entrada = buffer.readLine();
 
-        // Solicitar archivos con datos
         datos = archivo.fileToIntArray(entrada);
-        //
-        System.out.println("Arreglo original");
-        imprimirArreglo(datos);
-        //
-        datos = shellSort(datos);
-        System.out.println("Arreglo ordenado");
-        //
-        imprimirArreglo(datos);
 
-        archivo.writeArrayToFile("ordenado", datos);
+        if (datos != null) {
+            System.out.println("Arreglo original");
+            imprimirArreglo(datos);
+
+            datos = shellSort(datos);
+            System.out.println("Arreglo ordenado");
+            imprimirArreglo(datos);
+
+            archivo.writeArrayToFile("ordenadoshell", datos);
+        } else {
+            System.out.println("Los valores en el archivo son incorrectos");
+        }
     }
 }
