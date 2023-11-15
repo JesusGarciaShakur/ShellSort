@@ -14,10 +14,21 @@ public class ShellSort {
 
     public static int[] shellSort(int[] arreglo) {
         int n = arreglo.length;
-        for (){
+        int salto = n / 2;
+        while (salto > 0) {
+            for (int i = salto; i < n; i++) {
+                int saltoactual = arreglo[i];
+                int j = i;
 
+                while (j >= salto && arreglo[j - salto] > saltoactual) {
+                    arreglo[j] = arreglo[j - salto];
+                    j -= salto;
+                }
+                arreglo[j] = salto;
+            }
+            salto /= 2;
         }
-
+        return arreglo;
     }
 
     public static void main(String[] args) throws IOException {
